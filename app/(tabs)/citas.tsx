@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { View, StyleSheet } from "react-native";
 import { DataTable, Text } from "react-native-paper";
+import { blue } from "react-native-reanimated/lib/typescript/Colors";
 
 //Datos de usuario
 type Usuario = {
@@ -38,17 +39,16 @@ export default function CitasScreen() {
 
   function tipoUsuario(tipo: number){
     if (tipo==1){
-      return "admin"
+      return "Admin"
     }else if(tipo==2){
       return "usuario"
     }
   }
-
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Usuarios registrados</Text>
-
-      <DataTable>
+ 
+       <DataTable>
         <DataTable.Header>
           <DataTable.Title style={styles.column}>ID</DataTable.Title>
           <DataTable.Title style={styles.column}>Usuario</DataTable.Title>
@@ -80,11 +80,13 @@ export default function CitasScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#fff", padding: 16 },
-  title: { fontSize: 22, fontWeight: "700", marginBottom: 16 },
+  container: { flex: 1, backgroundColor: "#fff", padding: 100},
+  title: { fontSize: 22, fontWeight: "700", marginBottom: 16 , textAlign:"center"},
   column: {
     flex: 1,                 // Todas las columnas tienen el mismo ancho
     justifyContent: "center", // Centrado vertical
     alignItems: "center",     // Centrado horizontal
+    fontSize: 22,
   },
+
 });

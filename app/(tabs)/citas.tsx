@@ -10,7 +10,6 @@ type Usuario = {
 };
 
 export default function CitasScreen() {
-
   //Usuario
   const [usuarios, setUsuarios] = useState<Usuario[]>([]);
   //
@@ -37,6 +36,14 @@ export default function CitasScreen() {
     fetchUsuarios();
   }, []);
 
+  function tipoUsuario(tipo: number){
+    if (tipo==1){
+      return "admin"
+    }else if(tipo==2){
+      return "usuario"
+    }
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Usuarios registrados</Text>
@@ -54,7 +61,7 @@ export default function CitasScreen() {
             <DataTable.Row key={u.idUsuario}>
               <DataTable.Cell style={styles.column} numeric>{u.idUsuario}</DataTable.Cell>
               <DataTable.Cell style={styles.column}>{u.usuario}</DataTable.Cell>
-              <DataTable.Cell style={styles.column} numeric>{u.tipo}</DataTable.Cell>
+              <DataTable.Cell style={styles.column} numeric>{tipoUsuario(u.tipo)}</DataTable.Cell>
             </DataTable.Row>
           ))}
 

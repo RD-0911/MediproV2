@@ -3,6 +3,11 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, ActivityIndicator,
 import { Link, useRouter } from 'expo-router';
 
 // Usa la IP LAN que te salió en ipconfig
+// const API_URL = 'http://192.168.100.55:3000';
+const API_URL = 'http://localhost:3000'; // cambia por tu IP si usas Expo Go en celular
+console.log('[API_URL]', API_URL);
+
+
 //10.186.6.138
 const API_URL = 'http://192.168.100.55:3000';
 //const API_URL = 'http://10.186.6.138:3000';
